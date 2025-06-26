@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+
+# Logs & Payloads
+logs/*
+loot/*
+payloads/*
+sync-c2ghost.sh
+
+# OS files
+.DS_Store
