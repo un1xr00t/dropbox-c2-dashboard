@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="ascii-banner">
+<pre>
+                   
+        CCCCCCCCCCCCC 222222222222222           GGGGGGGGGGGGGhhhhhhh                                                        tttt          
+     CCC::::::::::::C2:::::::::::::::22      GGG::::::::::::Gh:::::h                                                     ttt:::t          
+   CC:::::::::::::::C2::::::222222:::::2   GG:::::::::::::::Gh:::::h                                                     t:::::t          
+  C:::::CCCCCCCC::::C2222222     2:::::2  G:::::GGGGGGGG::::Gh:::::h                                                     t:::::t          
+ C:::::C       CCCCCC            2:::::2 G:::::G       GGGGGG h::::h hhhhh          ooooooooooo       ssssssssss   ttttttt:::::ttttttt    
+C:::::C                          2:::::2G:::::G               h::::hh:::::hhh     oo:::::::::::oo   ss::::::::::s  t:::::::::::::::::t    
+C:::::C                       2222::::2 G:::::G               h::::::::::::::hh  o:::::::::::::::oss:::::::::::::s t:::::::::::::::::t    
+C:::::C                  22222::::::22  G:::::G    GGGGGGGGGG h:::::::hhh::::::h o:::::ooooo:::::os::::::ssss:::::stttttt:::::::tttttt    
+C:::::C                22::::::::222    G:::::G    G::::::::G h::::::h   h::::::ho::::o     o::::o s:::::s  ssssss       t:::::t          
+C:::::C               2:::::22222       G:::::G    GGGGG::::G h:::::h     h:::::ho::::o     o::::o   s::::::s            t:::::t          
+C:::::C              2:::::2            G:::::G        G::::G h:::::h     h:::::ho::::o     o::::o      s::::::s         t:::::t          
+ C:::::C       CCCCCC2:::::2             G:::::G       G::::G h:::::h     h:::::ho::::o     o::::ossssss   s:::::s       t:::::t    tttttt
+  C:::::CCCCCCCC::::C2:::::2       222222 G:::::GGGGGGGG::::G h:::::h     h:::::ho:::::ooooo:::::os:::::ssss::::::s      t::::::tttt:::::t
+   CC:::::::::::::::C2::::::2222222:::::2  GG:::::::::::::::G h:::::h     h:::::ho:::::::::::::::os::::::::::::::s       tt::::::::::::::t
+     CCC::::::::::::C2::::::::::::::::::2    GGG::::::GGG:::G h:::::h     h:::::h oo:::::::::::oo  s:::::::::::ss          tt:::::::::::tt
+        CCCCCCCCCCCCC22222222222222222222       GGGGGG   GGGG hhhhhhh     hhhhhhh   ooooooooooo     sssssssssss              ttttttttttt  
+
+</pre>
+<p>C2Ghost v1.0 – Red Team Ops Companion</p>
+</div>
+
+
+<!-- 🧠 Recon Summary Section -->
+<section class="summary-section">
+  <h2>🧠 Recon Summary</h2>
+  <div id="recon-wrapper" class="card-grid">
+    {% for recon in recon_summary %}
+      {% if recon.hosts %}
+      <div class="card mono-font recon-card {% if loop.index > 5 %}hidden{% endif %}">
+        <div class="card-header">📄 {{ recon.filename }}</div>
+        <div class="card-body">
+          {% for host in recon.hosts %}
+            <strong>IP:</strong> {{ host.ip }}<br>
+            <strong>Open Ports:</strong> {{ host.ports | join(', ') if host.ports else 'None' }}<br>
+            <strong>MAC:</strong> {{ host.mac or 'N/A' }}<br>
+            <strong>Device Type:</strong> {{ host.device_type }}<br><br>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div style="text-align:center; margin-top: 1rem;">
+    <button onclick="showAllRecon()" class="toggle-btn" id="showBtn">Show All</button>
+    <button onclick="collapseRecon()" class="toggle-btn hidden" id="collapseBtn">Collapse</button>
+  </div>
+</section>
+
+<!-- 📡 Interesting Open Ports -->
+<h2>📡 Interesting Open Ports</h2>
+<div class="card mono-font">
+  <div class="card-body">
+    {% if open_ports %}
+      {% for port, ips in open_ports.items() %}
+        <strong>Port {{ port }}</strong><br>
+        {% for ip in ips %}
+          &nbsp;&nbsp;• {{ ip }}<br>
+        {% endfor %}
+        <br>
+      {% endfor %}
+    {% else %}
+      <p>No interesting ports detected.</p>
+    {% endif %}
+  </div>
+</div>
+
+<!-- 💻 Active Sessions -->
+<h2>💻 Active Sessions</h2>
+<div class="card-grid">
+  {% for session in sessions %}
+  <div class="card">
+    <div class="card-header">🖥️ {{ session['hostname'] }} ({{ session['ip'] }})</div>
+    <div class="card-body mono-font">
+      OS: {{ session['os'] }}<br>
+      First Seen: {{ session['first_seen'] }}<br>
+      Last Seen: {{ session['last_seen'] }}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- 🎯 Payloads -->
+<h2>🎯 Payloads</h2>
+<div class="card-grid">
+  {% for file in payloads %}
+  <div class="card">
+    <div class="card-header">💾 {{ file.name }} ({{ file.size_kb }} KB)</div>
+    <div class="card-body">
+      <a href="/payloads/{{ file.name }}" target="_blank">View/Download</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- 🗂️ All Recon Files -->
+<h2>📂 All Recon Files</h2>
+<div class="card-grid">
+  {% for file in loot.recon %}
+  <div class="card">
+    <div class="card-header">📄 {{ file }}</div>
+    <div class="card-body">
+      <a href="/loot/recon/{{ file }}" target="_blank">View/Download</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function showAllRecon() {
+    document.querySelectorAll('.recon-card.hidden').forEach(card => {
+      card.classList.remove('hidden');
+    });
+    document.getElementById('showBtn').classList.add('hidden');
+    document.getElementById('collapseBtn').classList.remove('hidden');
+  }
+
+  function collapseRecon() {
+    let allCards = document.querySelectorAll('.recon-card');
+    allCards.forEach((card, index) => {
+      if (index >= 5) {
+        card.classList.add('hidden');
+      }
+    });
+    document.getElementById('showBtn').classList.remove('hidden');
+    document.getElementById('collapseBtn').classList.add('hidden');
+  }
+</script>
+{% endblock %}
