@@ -1,0 +1,19 @@
+Interface: wlan0, type: EN10MB, MAC: <REDACTED_MAC>, IPv4: <REDACTED_IP>
+WARNING: Cannot open MAC/Vendor file <REDACTED_HOSTNAME>: Permission denied
+WARNING: Cannot open MAC/Vendor file <REDACTED_HOSTNAME>: Permission denied
+Starting arp-scan 1.10.0 with 256 hosts (https://<REDACTED_HOSTNAME>/royhills/arp-scan)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown: locally administered)
+
+14 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.10.0: 256 hosts scanned in 1.868 seconds (137.04 hosts/sec). 12 responded
