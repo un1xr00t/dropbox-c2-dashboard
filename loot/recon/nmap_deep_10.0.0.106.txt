@@ -1,0 +1,49 @@
+# Nmap 7.95 scan initiated Wed Jun 25 00:12:46 2025 as: /usr/lib/nmap/nmap -sV -p 22,80,139,445,443,3389 -oN /home/kali/loot/recon/nmap_deep_10.<REDACTED_HOSTNAME> <REDACTED_IP>
+Nmap scan report for <REDACTED_IP>
+Host is up (0.044s latency).
+
+PORT     STATE  SERVICE       VERSION
+22/tcp   closed ssh
+80/tcp   open   http
+139/tcp  closed netbios-ssn
+443/tcp  closed https
+445/tcp  closed microsoft-ds
+3389/tcp closed ms-wbt-server
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://<REDACTED_HOSTNAME>/cgi-bin/<REDACTED_HOSTNAME>?new-service :
+SF-Port80-TCP:V=7.95%I=7%D=6/25%Time=685B3F05%P=aarch64-unknown-linux-gnu%
+SF:r(GetRequest,7A,"HTTP/1\.1\x20401\x20Unauthorized\r\nContent-Length:\x2
+SF:00\r\nWWW-Authenticate:\x20Digest\x20qop=\"auth\",\x20realm=\"rokudev\"
+SF:,\x20nonce=\"1750810373\"\r\n\r\n")%r(HTTPOptions,7A,"HTTP/1\.1\x20401\
+SF:x20Unauthorized\r\nContent-Length:\x200\r\nWWW-Authenticate:\x20Digest\
+SF:x20qop=\"auth\",\x20realm=\"rokudev\",\x20nonce=\"1750810373\"\r\n\r\n"
+SF:)%r(RTSPRequest,8C,"HTTP/1\.1\x20500\x20Server\x20Error\r\nContent-Leng
+SF:th:\x2046\r\nContent-Type:\x20text/plain\r\nConnection:\x20close\r\n\r\
+SF:nError\x20500:\x20Server\x20Error\nBad\x20request:\x20\[OPTIONS\]")%r(X
+SF:11Probe,8E,"HTTP/1\.1\x20500\x20Server\x20Error\r\nContent-Length:\x204
+SF:8\r\nContent-Type:\x20text/plain\r\nConnection:\x20close\r\n\r\nError\x
+SF:20500:\x20Server\x20Error\nClient\x20closed\x20connection")%r(FourOhFou
+SF:rRequest,7A,"HTTP/1\.1\x20401\x20Unauthorized\r\nContent-Length:\x200\r
+SF:\nWWW-Authenticate:\x20Digest\x20qop=\"auth\",\x20realm=\"rokudev\",\x2
+SF:0nonce=\"1750810373\"\r\n\r\n")%r(GenericLines,88,"HTTP/1\.1\x20500\x20
+SF:Server\x20Error\r\nContent-Length:\x2042\r\nContent-Type:\x20text/plain
+SF:\r\nConnection:\x20close\r\n\r\nError\x20500:\x20Server\x20Error\nBad\x
+SF:20request:\x20\[\r\n\r\]")%r(RPCCheck,8E,"HTTP/1\.1\x20500\x20Server\x2
+SF:0Error\r\nContent-Length:\x2048\r\nContent-Type:\x20text/plain\r\nConne
+SF:ction:\x20close\r\n\r\nError\x20500:\x20Server\x20Error\nClient\x20clos
+SF:ed\x20connection")%r(DNSVersionBindReqTCP,8E,"HTTP/1\.1\x20500\x20Serve
+SF:r\x20Error\r\nContent-Length:\x2048\r\nContent-Type:\x20text/plain\r\nC
+SF:onnection:\x20close\r\n\r\nError\x20500:\x20Server\x20Error\nClient\x20
+SF:closed\x20connection")%r(DNSStatusRequestTCP,8E,"HTTP/1\.1\x20500\x20Se
+SF:rver\x20Error\r\nContent-Length:\x2048\r\nContent-Type:\x20text/plain\r
+SF:\nConnection:\x20close\r\n\r\nError\x20500:\x20Server\x20Error\nClient\
+SF:x20closed\x20connection")%r(SSLSessionReq,8E,"HTTP/1\.1\x20500\x20Serve
+SF:r\x20Error\r\nContent-Length:\x2048\r\nContent-Type:\x20text/plain\r\nC
+SF:onnection:\x20close\r\n\r\nError\x20500:\x20Server\x20Error\nClient\x20
+SF:closed\x20connection")%r(TerminalServerCookie,8E,"HTTP/1\.1\x20500\x20S
+SF:erver\x20Error\r\nContent-Length:\x2048\r\nContent-Type:\x20text/plain\
+SF:r\nConnection:\x20close\r\n\r\nError\x20500:\x20Server\x20Error\nClient
+SF:\x20closed\x20connection");
+MAC Address: <REDACTED_MAC> (Hui Zhou Gaoshengda Technology)
+
+Service detection performed. Please report any incorrect results at https://<REDACTED_HOSTNAME>/submit/ .
+# Nmap done at Wed Jun 25 00:13:01 2025 -- 1 IP address (1 host up) scanned in 14.74 seconds

@@ -1,0 +1,88 @@
+# Nmap 7.95 scan initiated Wed Jun 25 00:10:02 2025 as: /usr/lib/nmap/nmap -sV -p 22,80,139,445,443,3389 -oN /home/kali/loot/recon/nmap_deep_10.<REDACTED_HOSTNAME> <REDACTED_IP>
+Nmap scan report for <REDACTED_IP>
+Host is up (0.0046s latency).
+
+PORT     STATE    SERVICE       VERSION
+22/tcp   filtered ssh
+80/tcp   open     http          Xfinity Broadband Router Server
+139/tcp  closed   netbios-ssn
+443/tcp  open     ssl/https     Xfinity Broadband Router Server
+445/tcp  closed   microsoft-ds
+3389/tcp closed   ms-wbt-server
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://<REDACTED_HOSTNAME>/cgi-bin/<REDACTED_HOSTNAME>?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.95%I=7%D=6/25%Time=685B3E64%P=aarch64-unknown-linux-gnu%
+SF:r(GetRequest,24BC,"HTTP/1\.0\x20200\x20OK\r\nContent-type:\x20text/html
+SF:\r\nX-robots-tag:\x20noindex,nofollow\r\nX-Frame-Options:\x20deny\r\nX-
+SF:XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosni
+SF:ff\r\nStrict-Transport-Security:\x20max-age=15768000;\x20includeSubdoma
+SF:ins\r\nPragma:\x20no-cache\r\nCache-Control:\x20no-store,\x20no-cache,\
+SF:x20must-revalidate\r\nContent-Security-Policy:\x20default-src\x20'self'
+SF:\x20;\x20style-src\x20'self'\x20;\x20frame-src\x20'self'\x20;\x20font-s
+SF:rc\x20'self'\x20;\x20form-action\x20'self'\x20;\x20script-src\x20'self'
+SF:\x20'unsafe-inline'\x20'unsafe-eval';\x20img-src\x20'self';\x20connect-
+SF:src\x20'self';\x20object-src\x20'none';\x20media-src\x20'none';\x20scri
+SF:pt-nonce\x20'none';\x20plugin-types\x20'none';\x20reflected-xss\x20'non
+SF:e';\x20report-uri\x20'none';\r\nContent-Length:\x208657\r\nConnection:\
+SF:x20close\r\nDate:\x20Thu,\x2015\x20Jan\x201970\x2012:33:29\x20GMT\r\nSe
+SF:rver:\x20Xfinity\x20Broadband\x20Router\x20Server\r\n\r\n\n<!DOCTYPE\x2
+SF:0html\x20PUBLIC\x20\"-//W3C//DTD\x20XHTML\x201\.0\x20Strict//EN\"\x20\"
+SF:http://www\.w3\.org/TR/xhtml1/DTD/xhtml1-strict\.dtd\">\n<html\x20xmlns
+SF:=\"http://www\.w3\.org/1999/xhtml\"")%r(HTTPOptions,24BC,"HTTP/1\.0\x20
+SF:200\x20OK\r\nContent-type:\x20text/html\r\nX-robots-tag:\x20noindex,nof
+SF:ollow\r\nX-Frame-Options:\x20deny\r\nX-XSS-Protection:\x201;\x20mode=bl
+SF:ock\r\nX-Content-Type-Options:\x20nosniff\r\nStrict-Transport-Security:
+SF:\x20max-age=15768000;\x20includeSubdomains\r\nPragma:\x20no-cache\r\nCa
+SF:che-Control:\x20no-store,\x20no-cache,\x20must-revalidate\r\nContent-Se
+SF:curity-Policy:\x20default-src\x20'self'\x20;\x20style-src\x20'self'\x20
+SF:;\x20frame-src\x20'self'\x20;\x20font-src\x20'self'\x20;\x20form-action
+SF:\x20'self'\x20;\x20script-src\x20'self'\x20'unsafe-inline'\x20'unsafe-e
+SF:val';\x20img-src\x20'self';\x20connect-src\x20'self';\x20object-src\x20
+SF:'none';\x20media-src\x20'none';\x20script-nonce\x20'none';\x20plugin-ty
+SF:pes\x20'none';\x20reflected-xss\x20'none';\x20report-uri\x20'none';\r\n
+SF:Content-Length:\x208657\r\nConnection:\x20close\r\nDate:\x20Thu,\x2015\
+SF:x20Jan\x201970\x2012:33:30\x20GMT\r\nServer:\x20Xfinity\x20Broadband\x2
+SF:0Router\x20Server\r\n\r\n\n<!DOCTYPE\x20html\x20PUBLIC\x20\"-//W3C//DTD
+SF:\x20XHTML\x201\.0\x20Strict//EN\"\x20\"http://www\.w3\.org/TR/xhtml1/DT
+SF:D/xhtml1-strict\.dtd\">\n<html\x20xmlns=\"http://www\.w3\.org/1999/xhtm
+SF:l\"");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.95%T=SSL%I=7%D=6/25%Time=685B3E69%P=aarch64-unknown-lin
+SF:ux-gnu%r(GetRequest,24BC,"HTTP/1\.0\x20200\x20OK\r\nContent-type:\x20te
+SF:xt/html\r\nX-robots-tag:\x20noindex,nofollow\r\nX-Frame-Options:\x20den
+SF:y\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x
+SF:20nosniff\r\nStrict-Transport-Security:\x20max-age=15768000;\x20include
+SF:Subdomains\r\nPragma:\x20no-cache\r\nCache-Control:\x20no-store,\x20no-
+SF:cache,\x20must-revalidate\r\nContent-Security-Policy:\x20default-src\x2
+SF:0'self'\x20;\x20style-src\x20'self'\x20;\x20frame-src\x20'self'\x20;\x2
+SF:0font-src\x20'self'\x20;\x20form-action\x20'self'\x20;\x20script-src\x2
+SF:0'self'\x20'unsafe-inline'\x20'unsafe-eval';\x20img-src\x20'self';\x20c
+SF:onnect-src\x20'self';\x20object-src\x20'none';\x20media-src\x20'none';\
+SF:x20script-nonce\x20'none';\x20plugin-types\x20'none';\x20reflected-xss\
+SF:x20'none';\x20report-uri\x20'none';\r\nContent-Length:\x208657\r\nConne
+SF:ction:\x20close\r\nDate:\x20Thu,\x2015\x20Jan\x201970\x2012:33:35\x20GM
+SF:T\r\nServer:\x20Xfinity\x20Broadband\x20Router\x20Server\r\n\r\n\n<!DOC
+SF:TYPE\x20html\x20PUBLIC\x20\"-//W3C//DTD\x20XHTML\x201\.0\x20Strict//EN\
+SF:"\x20\"http://www\.w3\.org/TR/xhtml1/DTD/xhtml1-strict\.dtd\">\n<html\x
+SF:20xmlns=\"http://www\.w3\.org/1999/xhtml\"")%r(HTTPOptions,24BC,"HTTP/1
+SF:\.0\x20200\x20OK\r\nContent-type:\x20text/html\r\nX-robots-tag:\x20noin
+SF:dex,nofollow\r\nX-Frame-Options:\x20deny\r\nX-XSS-Protection:\x201;\x20
+SF:mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nStrict-Transport-Se
+SF:curity:\x20max-age=15768000;\x20includeSubdomains\r\nPragma:\x20no-cach
+SF:e\r\nCache-Control:\x20no-store,\x20no-cache,\x20must-revalidate\r\nCon
+SF:tent-Security-Policy:\x20default-src\x20'self'\x20;\x20style-src\x20'se
+SF:lf'\x20;\x20frame-src\x20'self'\x20;\x20font-src\x20'self'\x20;\x20form
+SF:-action\x20'self'\x20;\x20script-src\x20'self'\x20'unsafe-inline'\x20'u
+SF:nsafe-eval';\x20img-src\x20'self';\x20connect-src\x20'self';\x20object-
+SF:src\x20'none';\x20media-src\x20'none';\x20script-nonce\x20'none';\x20pl
+SF:ugin-types\x20'none';\x20reflected-xss\x20'none';\x20report-uri\x20'non
+SF:e';\r\nContent-Length:\x208657\r\nConnection:\x20close\r\nDate:\x20Thu,
+SF:\x2015\x20Jan\x201970\x2012:33:36\x20GMT\r\nServer:\x20Xfinity\x20Broad
+SF:band\x20Router\x20Server\r\n\r\n\n<!DOCTYPE\x20html\x20PUBLIC\x20\"-//W
+SF:3C//DTD\x20XHTML\x201\.0\x20Strict//EN\"\x20\"http://www\.w3\.org/TR/xh
+SF:tml1/DTD/xhtml1-strict\.dtd\">\n<html\x20xmlns=\"http://www\.w3\.org/19
+SF:99/xhtml\"");
+MAC Address: <REDACTED_MAC> (Vantiva - Connected Home)
+
+Service detection performed. Please report any incorrect results at https://<REDACTED_HOSTNAME>/submit/ .
+# Nmap done at Wed Jun 25 00:12:43 2025 -- 1 IP address (1 host up) scanned in 161.35 seconds

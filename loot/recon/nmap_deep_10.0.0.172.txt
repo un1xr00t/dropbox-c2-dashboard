@@ -1,0 +1,2 @@
+# Nmap 7.95 scan initiated Thu Jun 19 19:05:20 2025 as: /usr/lib/nmap/nmap -sV -p 22,80,139,445,443,3389 -oN /home/kali/loot/recon/nmap_deep_10.<REDACTED_HOSTNAME> <REDACTED_IP>
+# Nmap done at Thu Jun 19 19:05:22 2025 -- 1 IP address (0 hosts up) scanned in 1.69 seconds

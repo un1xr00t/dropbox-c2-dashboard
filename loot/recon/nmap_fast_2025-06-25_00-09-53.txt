@@ -1,0 +1,120 @@
+# Nmap 7.95 scan initiated Wed Jun 25 00:09:55 2025 as: /usr/lib/nmap/nmap -T4 -F -oN /home/kali/loot/recon/nmap_fast_2025-06-25_00<REDACTED_HOSTNAME> <REDACTED_IP>/24
+Nmap scan report for <REDACTED_IP>
+Host is up (0.0056s latency).
+Not shown: 93 closed tcp ports (reset)
+PORT     STATE    SERVICE
+22/tcp   filtered ssh
+23/tcp   filtered telnet
+53/tcp   open     domain
+80/tcp   open     http
+111/tcp  filtered rpcbind
+443/tcp  open     https
+8080/tcp filtered http-proxy
+MAC Address: <REDACTED_MAC> (Vantiva - Connected Home)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.0085s latency).
+Not shown: 99 closed tcp ports (reset)
+PORT   STATE SERVICE
+25/tcp open  smtp
+MAC Address: <REDACTED_MAC> (ASUSTek Computer)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.035s latency).
+All 100 scanned ports on <REDACTED_IP> are in ignored states.
+Not shown: 100 closed tcp ports (reset)
+MAC Address: <REDACTED_MAC> (Unknown)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.12s latency).
+Not shown: 83 closed tcp ports (reset)
+PORT      STATE    SERVICE
+7/tcp     filtered echo
+9/tcp     filtered discard
+88/tcp    filtered kerberos-sec
+444/tcp   filtered snpp
+873/tcp   filtered rsync
+1029/tcp  filtered ms-lsa
+2000/tcp  filtered cisco-sccp
+3986/tcp  filtered mapper-ws_ethd
+4899/tcp  filtered radmin
+5051/tcp  filtered ida-agent
+5357/tcp  filtered wsdapi
+6000/tcp  filtered X11
+6001/tcp  filtered X11:1
+7070/tcp  filtered realserver
+8008/tcp  filtered http
+10000/tcp filtered snet-sensor-mgmt
+49156/tcp filtered unknown
+MAC Address: <REDACTED_MAC> (Google)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.012s latency).
+Not shown: 98 closed tcp ports (reset)
+PORT     STATE SERVICE
+80/tcp   open  http
+8080/tcp open  http-proxy
+MAC Address: <REDACTED_MAC> (Hui Zhou Gaoshengda Technology)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.012s latency).
+Not shown: 99 closed tcp ports (reset)
+PORT     STATE SERVICE
+8009/tcp open  ajp13
+MAC Address: <REDACTED_MAC> (Amazon Technologies)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.010s latency).
+Not shown: 99 closed tcp ports (reset)
+PORT      STATE SERVICE
+49152/tcp open  unknown
+MAC Address: <REDACTED_MAC> (Unknown)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.011s latency).
+Not shown: 98 closed tcp ports (reset)
+PORT     STATE SERVICE
+8009/tcp open  ajp13
+8888/tcp open  sun-answerbook
+MAC Address: <REDACTED_MAC> (Amazon Technologies)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.014s latency).
+All 100 scanned ports on <REDACTED_IP> are in ignored states.
+Not shown: 100 closed tcp ports (reset)
+MAC Address: <REDACTED_MAC> (Amazon Technologies)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.013s latency).
+All 100 scanned ports on <REDACTED_IP> are in ignored states.
+Not shown: 100 closed tcp ports (reset)
+MAC Address: <REDACTED_MAC> (Unknown)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.012s latency).
+Not shown: 99 closed tcp ports (reset)
+PORT     STATE SERVICE
+8009/tcp open  ajp13
+MAC Address: <REDACTED_MAC> (Amazon Technologies)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.033s latency).
+Not shown: 99 closed tcp ports (reset)
+PORT    STATE SERVICE
+443/tcp open  https
+MAC Address: <REDACTED_MAC> (Blink by Amazon)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.0092s latency).
+Not shown: 99 closed tcp ports (reset)
+PORT      STATE SERVICE
+49152/tcp open  unknown
+MAC Address: <REDACTED_MAC> (Unknown)
+
+Nmap scan report for <REDACTED_IP>
+Host is up (0.0000050s latency).
+Not shown: 99 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+
+# Nmap done at Wed Jun 25 00:10:02 2025 -- 256 IP addresses (14 hosts up) scanned in 6.91 seconds

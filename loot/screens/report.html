@@ -1,0 +1,59 @@
+<html>
+        <head>
+        <link rel="stylesheet" href="https://<REDACTED_HOSTNAME>/bootstrap/3.3.7/css/<REDACTED_HOSTNAME>" type="text/css"/>
+        <title>EyeWitness Report</title>
+        <script src="<REDACTED_HOSTNAME>"></script>
+        <script type="text/javascript">
+        function toggleUA(id, url){
+        idi = "." + id;
+        $(idi).toggle();
+        change = document.getElementById(id);
+        if (change.innerHTML.indexOf("expand") > -1){
+            change.innerHTML = "Click to collapse User Agents for " + url;
+        }else{
+            change.innerHTML = "Click to expand User Agents for " + url;
+        }
+        }
+
+        document.onkeydown = function(event){
+            event = event || <REDACTED_HOSTNAME>;
+            switch (event.keyCode){
+                case 37:
+                    leftArrow();
+                    break;
+                case 39:
+                    rightArrow();
+                    break;
+            }
+        };
+                
+        function leftArrow(){
+            $('#previous')[0].click();
+        };
+
+        function rightArrow(){
+            $('#next')[0].click();
+        };
+
+        </script>
+        </head>
+        <body>
+        <center>
+        <center>Report Generated on 2025/06/19 at 20:01:25</center><table border="1">
+        <tr>
+        <th>Web Request Info</th>
+        <th>Web Screenshot</th>
+        </tr><tr>
+            <td><div style="display: inline-block; width: 300px; word-wrap: break-word">
+            <a href="http://<REDACTED_IP>" target="_blank">http://<REDACTED_IP></a><br>
+            
+<br><b> Page Title: </b>Unknown
+<br><b> Content-Length:</b> 0
+<br><b> WWW-Authenticate:</b> Digest qop=&quot;auth&quot;, realm=&quot;rokudev&quot;, nonce=&quot;1750363292&quot;
+<br><b> Response Code:</b> 401
+<br><br><a href="source/http.<REDACTED_IP>.txt"
+                target="_blank">Source Code</a></div></td>
+                <td><div id="screenshot"><a href="screens/http.<REDACTED_IP>.png"
+                target="_blank"><img src="screens/http.<REDACTED_IP>.png"
+                height="400"></a></div></td></tr></div>
+        </div></table><br>

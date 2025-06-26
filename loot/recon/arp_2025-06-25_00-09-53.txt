@@ -1,0 +1,18 @@
+Interface: wlan0, type: EN10MB, MAC: <REDACTED_MAC>, IPv4: <REDACTED_IP>
+Starting arp-scan 1.10.0 with 256 hosts (https://<REDACTED_HOSTNAME>/royhills/arp-scan)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	Google, Inc.
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown: locally administered)
+<REDACTED_IP>	<REDACTED_MAC>	Hui Zhou Gaoshengda Technology Co.,LTD
+<REDACTED_IP>	<REDACTED_MAC>	Amazon Technologies Inc.
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown: locally administered)
+<REDACTED_IP>	<REDACTED_MAC>	Amazon Technologies Inc.
+<REDACTED_IP>	<REDACTED_MAC>	Amazon Technologies Inc.
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown: locally administered)
+<REDACTED_IP>	<REDACTED_MAC>	Blink by Amazon
+<REDACTED_IP>	<REDACTED_MAC>	(Unknown)
+
+17 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.10.0: 256 hosts scanned in 2.229 seconds (114.85 hosts/sec). 13 responded
