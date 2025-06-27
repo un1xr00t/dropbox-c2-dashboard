@@ -56,6 +56,8 @@ def index():
     loot = parse_loot(LOOT_DIR)
     recon_summary = summarize_recon_files_ai()
     open_ports = extract_open_ports()
+
+   
     return render_template(
         'index.html',
         sessions=sessions,
@@ -64,6 +66,7 @@ def index():
         recon_summary=recon_summary,
         open_ports=open_ports
     )
+
 
 # 🔽 Serve Payloads + Loot
 @app.route('/payloads/<path:filename>')
@@ -77,7 +80,6 @@ def serve_loot_file(filename):
 @app.route('/loot/screens/<path:filename>')
 def serve_screenshot(filename):
     return send_from_directory(os.path.join(LOOT_DIR, 'screens', 'screens'), filename)
-
 
 # 🚀 Launch
 if __name__ == '__main__':

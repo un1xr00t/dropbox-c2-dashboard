@@ -124,14 +124,20 @@ def summarize_recon_files_ai():
     loot_dir = "loot/recon"
     summaries = []
 
-    for filename in os.listdir(loot_dir):
+    for filename in sorted(os.listdir(loot_dir)):
         if not filename.endswith(".txt"):
             continue
 
         path = os.path.join(loot_dir, filename)
         with open(path, 'r', encoding='utf-8', errors='ignore') as f:
-            lines = f.readlines()
+            content = f.read()
 
+        # Skip files that don’t look like real Nmap scans
+        if "Nmap scan report for" not in content:
+            print(f"[SKIP] Not a real Nmap file: {filename}")
+            continue
+
+        lines = content.splitlines()
         hosts = []
         current_host = None
 
@@ -143,7 +149,6 @@ def summarize_recon_files_ai():
             mac_match = re.search(r'MAC Address: ([0-9A-Fa-f:]{17})', line)
 
             if ip_match:
-                print(f"[FOUND IP] {ip_match.group(1)} in {filename}")
                 if current_host:
                     hosts.append(current_host)
                 current_host = {
@@ -162,5 +167,13 @@ def summarize_recon_files_ai():
                 mac = mac_match.group(1)
                 current_host["mac"] = mac
                 current_host["device_type"] = get_mac_vendor(mac)
+
+        if current_host:
+            hosts.append(current_host)
+
+        summaries.append({
+            "filename": filename,
+            "hosts": hosts
+        })
 
     return summaries
