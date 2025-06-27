@@ -163,18 +163,4 @@ def summarize_recon_files_ai():
                 current_host["mac"] = mac
                 current_host["device_type"] = get_mac_vendor(mac)
 
-        if current_host:
-            hosts.append(current_host)
-        host_ips = [h["ip"] for h in hosts]
-        print(f"[SUMMARY DEBUG] {filename} → {len(hosts)} hosts: {host_ips if hosts else 'SKIPPED'}")
-
-        summaries.append({
-            "filename": filename,
-            "hosts": hosts
-        })
-
-    print("\n[FINAL DEBUG] These files made it into recon_summary:")
-    for s in summaries:
-        print(f"  → {s['filename']} ({len(s['hosts'])} hosts)")
-
     return summaries

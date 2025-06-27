@@ -16,7 +16,7 @@ RECON_DIR = os.path.join(LOOT_DIR, 'recon')
 # 🔐 IP Whitelist Logic
 @app.before_request
 def limit_remote_addr():
-    allowed_ips = ['YOUR-IP1', 'YOUR-IP2']
+    allowed_ips = ['73.174.44.217', '163.114.130.129']
     if request.remote_addr not in allowed_ips:
         abort(403)
 
@@ -78,23 +78,7 @@ def serve_loot_file(filename):
 def serve_screenshot(filename):
     return send_from_directory(os.path.join(LOOT_DIR, 'screens', 'screens'), filename)
 
-@app.route("/")
-def dashboard():
-    ...
-    recon_summary = summarize_recon_files_ai()  # <- should return list of dicts like:
-    # [
-    #   {
-    #     "filename": "nmap_deep_10.0.0.80.txt",
-    #     "hosts": [
-    #        {"ip": "10.0.0.80", "ports": [...], "mac": "...", "device_type": "..."}
-    #     ]
-    #   }
-    # ]
-    return render_template("index.html", ..., recon_summary=recon_summary)
-print("[RECON DEBUG]", os.listdir("loot/recon"))
-
 
 # 🚀 Launch
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
-
