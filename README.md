@@ -180,6 +180,8 @@ MAC Address: 00:11:22:33:44:55 (Cisco Systems)
 ```bash
 git clone https://github.com/un1xr00t/red-teaming-dropbox
 cd c2ghost
+python -m venv venv
+source venv/bin/activate
 pip install flask
 python3 c2ghost.py
 ```
