@@ -127,20 +127,6 @@ Pulls a list of interesting ports from all recon files for a top summary.
 
 ---
 
-## 🖼️ Template Rendering: `templates/index.html`
-
-- Loops over recon summaries with `{% for recon in recon_summary %}`
-- Each summary becomes a card (up to 5 shown by default)
-- Includes toggles: “Show All” and “Collapse”
-
-```html
-<div class="recon-card {% if loop.index > 5 %}hidden{% endif %}">
-  <!-- Recon content -->
-</div>
-```
-
----
-
 ## 🎨 Styling: `static/style.css`
 
 - `.card-grid`: Responsive layout
@@ -148,34 +134,6 @@ Pulls a list of interesting ports from all recon files for a top summary.
 - `.hidden`: Toggled with JS
 - `.toggle-btn`: Button styles
 - `.ascii-banner`: Retro-style header (Mr. Robot vibes)
-
----
-
-## 📊 Dynamic Recon Visualization
-
-Buttons:
-```html
-<button id="showBtn" onclick="showAllRecon()">Show All</button>
-<button id="collapseBtn" onclick="collapseRecon()">Collapse</button>
-```
-JavaScript Functions:
-```js
-function showAllRecon() {
-  document.querySelectorAll('.recon-card').forEach((card, i) => {
-    card.classList.remove('hidden');
-  });
-  document.getElementById('showBtn').style.display = 'none';
-  document.getElementById('collapseBtn').style.display = 'inline-block';
-}
-
-function collapseRecon() {
-  document.querySelectorAll('.recon-card').forEach((card, i) => {
-    if (i >= 5) card.classList.add('hidden');
-  });
-  document.getElementById('collapseBtn').style.display = 'none';
-  document.getElementById('showBtn').style.display = 'inline-block';
-}
-```
 
 ---
 
