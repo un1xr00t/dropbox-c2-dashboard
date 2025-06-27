@@ -178,7 +178,7 @@ MAC Address: 00:11:22:33:44:55 (Cisco Systems)
 ## 🚀 Get Started
 
 ```bash
-git clone https://github.com/un1xr00t/red-teaming-dropbox
+git clone https://github.com/un1xr00t/dropbox-c2-dashboard
 cd dropbox-c2-dashboard
 python -m venv venv
 source venv/bin/activate
