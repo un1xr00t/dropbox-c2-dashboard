@@ -1,5 +1,5 @@
 
-# 🧠 C2Ghost Dashboard – GitHub Writeup
+# 🧠 C2Ghost Dashboard
 
 > Part of the [Red Teaming Dropbox project](https://github.com/un1xr00t/red-teaming-dropbox)
 > 
